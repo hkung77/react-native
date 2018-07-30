@@ -143,6 +143,48 @@ class RewriteExampleInvalidCharacters extends React.Component<$FlowFixMeProps, a
   }
 }
 
+class RewriteExampleKana extends React.Component<$FlowFixMeProps, any> {
+  constructor(props) {
+    super(props);
+    this.state = {text: ''};
+  }
+  render() {
+    return (
+      <View style={styles.rewriteContainer}>
+        <TextInput
+          multiline={false}
+          onChangeText={text => {
+            this.setState({text: text.replace(/ひ/g, '日')});
+          }}
+          style={styles.default}
+          value={this.state.text}
+        />
+      </View>
+    );
+  }
+}
+
+class SecureEntryExample extends React.Component<$FlowFixMeProps, any> {
+  constructor(props) {
+    super(props);
+    this.state = {text: ''};
+  }
+  render() {
+    return (
+      <View>
+        <TextInput
+          secureTextEntry={true}
+          style={styles.default}
+          defaultValue="abc"
+          onChangeText={text => this.setState({text})}
+          value={this.state.text}
+        />
+        <Text>Current text is: {this.state.text}</Text>
+      </View>
+    );
+  }
+}
+
 class TokenizedTextExample extends React.Component<$FlowFixMeProps, any> {
   constructor(props) {
     super(props);
@@ -485,7 +527,23 @@ exports.examples = [
     title: 'Live Re-Write (no spaces allowed)',
     render: function() {
       return <RewriteExampleInvalidCharacters />;
+<<<<<<< HEAD
     }
+=======
+    },
+  },
+  {
+    title: 'Live Re-Write (ひ -> 日)',
+    render: function() {
+      return <RewriteExampleKana />;
+    },
+  },
+  {
+    title: 'Keyboard Accessory View',
+    render: function() {
+      return <TextInputAccessoryViewExample />;
+    },
+>>>>>>> 892212bad2... Fix controlled <TextInput> on iOS when inputting in Chinese/Japanese
   },
   {
     title: 'Auto-capitalize',
@@ -653,6 +711,7 @@ exports.examples = [
   {
     title: 'Secure text entry',
     render: function() {
+<<<<<<< HEAD
       return (
         <View>
           <WithLabel label="true">
@@ -661,6 +720,10 @@ exports.examples = [
         </View>
       );
     }
+=======
+      return <SecureEntryExample />;
+    },
+>>>>>>> 892212bad2... Fix controlled <TextInput> on iOS when inputting in Chinese/Japanese
   },
   {
     title: 'Event handling',
