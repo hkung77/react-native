@@ -527,9 +527,7 @@ exports.examples = [
     title: 'Live Re-Write (no spaces allowed)',
     render: function() {
       return <RewriteExampleInvalidCharacters />;
-<<<<<<< HEAD
-    }
-=======
+
     },
   },
   {
@@ -543,7 +541,6 @@ exports.examples = [
     render: function() {
       return <TextInputAccessoryViewExample />;
     },
->>>>>>> 892212bad2... Fix controlled <TextInput> on iOS when inputting in Chinese/Japanese
   },
   {
     title: 'Auto-capitalize',
@@ -711,19 +708,8 @@ exports.examples = [
   {
     title: 'Secure text entry',
     render: function() {
-<<<<<<< HEAD
-      return (
-        <View>
-          <WithLabel label="true">
-            <TextInput secureTextEntry={true} style={styles.default} defaultValue="abc" />
-          </WithLabel>
-        </View>
-      );
-    }
-=======
       return <SecureEntryExample />;
     },
->>>>>>> 892212bad2... Fix controlled <TextInput> on iOS when inputting in Chinese/Japanese
   },
   {
     title: 'Event handling',

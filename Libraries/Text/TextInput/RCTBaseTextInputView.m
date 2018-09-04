@@ -98,8 +98,7 @@ RCT_NOT_IMPLEMENTED(- (instancetype)initWithFrame:(CGRect)frame)
   return self.backedTextInputView.attributedText;
 }
 
-<<<<<<< HEAD
-=======
+
 - (BOOL)textOf:(NSAttributedString*)newText equals:(NSAttributedString*)oldText{
   // When the dictation is running we can't update the attibuted text on the backed up text view
   // because setting the attributed string will kill the dictation. This means that we can't impose
@@ -120,7 +119,6 @@ RCT_NOT_IMPLEMENTED(- (instancetype)initWithFrame:(CGRect)frame)
   }
 }
 
->>>>>>> 892212bad2... Fix controlled <TextInput> on iOS when inputting in Chinese/Japanese
 - (void)setAttributedText:(NSAttributedString *)attributedText
 {
   NSInteger eventLag = _nativeEventCount - _mostRecentEventCount;
